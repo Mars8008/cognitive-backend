@@ -10,10 +10,10 @@ router.post('/add', resultController.addResult);
 // Бүх хэрэглэгчийг авах
 router.get('/', resultController.getResult);
 
-// // Хэрэглэгчийн мэдээллийг шинэчлэх
-// router.put('/:userId', userController.updateUser);
+// Хэрэглэгчийн мэдээллийг шинэчлэх
+router.put('/:resultId', resultController.updateResult);
 
-// // Хэрэглэгчийг устгах
-// router.delete('/:userId', userController.deleteUser);
+// Хэрэглэгчийг устгах
+router.delete('/:resultId', resultController.deleteResult);
 
 module.exports = router;
