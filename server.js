@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const userRoutes = require('./routes/userRoutes');  // Routes файлыг оруулна
 const resultRoutes = require('./routes/resultRoutes')
+const dailyRoutes = require('./routes/dailyRoutes')
 
 
 const app = express();
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGODB_URI)
 // Routes
 app.use('/users', userRoutes);  // Хэрэглэгчийн маршрутыг холбох
 app.use('/result', resultRoutes)
+app.use('/daily', dailyRoutes)
 
 // Серверийг сонсох
 app.listen(port, () => {
