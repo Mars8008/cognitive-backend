@@ -5,6 +5,8 @@ require('dotenv').config();
 const userRoutes = require('./routes/userRoutes');  // Routes файлыг оруулна
 const resultRoutes = require('./routes/resultRoutes')
 const dailyRoutes = require('./routes/dailyRoutes')
+const baselineRoutes = require('./routes/baselineRoutes');
+const dailyHabitRoutes = require('./routes/dailyHabitRoutes');
 
 
 const app = express();
@@ -19,9 +21,11 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.log('MongoDB холболтын алдаа:', err));
 
 // Routes
-app.use('/users', userRoutes);  // Хэрэглэгчийн маршрутыг холбох
-app.use('/result', resultRoutes)
-app.use('/daily', dailyRoutes)
+app.use('/api/baselines', baselineRoutes);
+app.use('/api/users', userRoutes);  // Хэрэглэгчийн маршрутыг холбох
+app.use('/api/result', resultRoutes)
+app.use('/api/daily', dailyRoutes)
+app.use('/api/habits', dailyHabitRoutes);
 
 // Серверийг сонсох
 app.listen(port, () => {
