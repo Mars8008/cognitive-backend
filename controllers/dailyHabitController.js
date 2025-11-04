@@ -1,6 +1,6 @@
 const DailyHabit = require('../models/DailyHabit');
 
-// POST — шинэ өдөр бүрийн habit нэмэх
+
 exports.createHabit = async (req, res) => {
   try {
     const habit = new DailyHabit({
