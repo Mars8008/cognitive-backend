@@ -17,7 +17,7 @@ app.use(express.json());
 
 // MongoDB холболт
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB холбогдсон'))
+  .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB холболтын алдаа:', err));
 
 // Routes
@@ -29,7 +29,7 @@ app.use('/api/habits', dailyHabitRoutes);
 
 // Серверийг сонсох
 app.listen(port, () => {
-  console.log(`Сервер ${port} порт дээр ажиллаж байна`);
+  console.log(`Server is running ${port} port`);
 });
 
 

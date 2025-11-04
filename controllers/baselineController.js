@@ -1,4 +1,3 @@
-// controllers/baselineController.js
 const BaselineAssessment = require('../models/BaselineAssessment');
 
 // Create new baseline

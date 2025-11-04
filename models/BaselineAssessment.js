@@ -1,4 +1,3 @@
-// models/BaselineAssessment.js
 const mongoose = require('mongoose');
 
 const baselineSchema = new mongoose.Schema({
